@@ -1,0 +1,36 @@
+<!--movielist.wxml-->
+<scroll-view bindscrolltolower="bindDownLoad" lower-threshold="100" style="height: 100%" scroll-y="true">
+
+  <view class="flex-wrp">
+    <view class="flex-item" wx:for="{{movielist}}">
+        <image  mode="widthFix" src="{{item.images.large}}"></image>
+        <view class="message">
+          <view class="title">{{item.title}}</view>
+          <view class="msg">类型：{{item.genres}}</view>
+          <view class="msg">上映年份：{{item.year}}</view>
+          <view class="msg">导演：<text wx:for="{{item.directors}}" wx:for-index="idx" wx:for-item="itemName">{{itemName.name}}<text wx:if ="{{idx < item.directors.length-1}}"> 、</text></text>
+          </view>
+          <view class="msg">主演：<text wx:for="{{item.casts}}" wx:for-item="itemName" wx:for-index="idx">{{itemName.name}}<text wx:if ="{{idx < item.casts.length-1}}"> 、</text></text> </view>
+        </view>
+        <view class="star">{{item.rating.average}}</view>
+    </view>
+    <view class="body-view">
+        <loading hidden="{{hidden}}">
+            加载中...
+        </loading>
+    </view>
+    <text hidden="{{nomore}}" class="no_more">没有更多了</text>
+
+  </view>
+</scroll-view>
+
+
+
+
+
+
+
+
+
+
+

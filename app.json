@@ -1,0 +1,40 @@
+{
+  "pages":[
+    "pages/guidepage/guidepage",
+    "pages/index/index",
+    "pages/movielist/movielist",
+    "pages/menu/menu",
+    "pages/book/book",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "IME",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "color":"#444",
+    "selectedColor":"#387ef5",
+    "borderStyle":"#ffffff",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "电影",
+      "selectedIconPath":"images/tarbar/movie_current.png",
+      "iconPath":"images/tarbar/movie.png"
+
+    }, {
+      "pagePath": "pages/menu/menu",
+      "text": "菜谱",
+      "selectedIconPath":"images/tarbar/menucurrent.png",
+      "iconPath":"images/tarbar/menu.png"
+    },{
+      "pagePath": "pages/book/book",
+      "text": "备忘录",
+      "selectedIconPath":"images/tarbar/bookcurrent.png",
+      "iconPath":"images/tarbar/book.png"
+    }]
+  }
+
+
+}

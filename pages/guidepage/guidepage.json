@@ -1,0 +1,18 @@
+{
+  "pages":[
+    "pages/guidepage/guidepage",
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "IME",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "list": []
+  }
+
+
+}

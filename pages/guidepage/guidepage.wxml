@@ -1,0 +1,12 @@
+<!--guidepage.wxml-->
+<swiper autoplay="true" duration="{{duration}}" indicator-dots="true" indicator-color="rgba(255,255,255,1)" indicator-active-color="rgba(137,214,99,1)" circular="true">
+  <block wx:for="{{imgUrls}}">
+    <swiper-item bindtap="bindViewTap">
+        <image src="{{item}}" class="slide-image" />
+    </swiper-item>
+  </block>
+</swiper>
+
+
+
+
