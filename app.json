@@ -2,8 +2,9 @@
   "pages":[
     "pages/guidepage/guidepage",
     "pages/index/index",
-    "pages/movielist/movielist",
     "pages/menu/menu",
+    "pages/moviedetail/moviedetail",
+    "pages/movielist/movielist",
     "pages/book/book",
     "pages/logs/logs"
   ],

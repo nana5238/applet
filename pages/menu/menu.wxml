@@ -1,6 +1,6 @@
-<!--index.wxml-->
+<!--menu.wxml-->
 <view class="section">
-  <input placeholder="查看你想看的电影" type="text" confirm-type="搜索"/>
+  <input placeholder="搜索菜谱" type="text" confirm-type="搜索"/>
 </view>
 
 <swiper autoplay="true" duration="{{duration}}" indicator-dots="true" indicator-color="rgba(255,255,255,1)" indicator-active-color="rgba(137,214,99,1)" circular="true">
@@ -12,9 +12,16 @@
 </swiper>
 
 <view class="btn-area">
-  <navigator url="/page/navigate/navigate?title=navigate" hover-class="navigator-hover">
-    电影
+  <navigator url="/pages/movielist/movielist?type=in_theaters">
+    <image style="width:50%; " mode="widthFix" src="/images/menu/nav5.png"></image>
+    早餐
   </navigator>
-  <navigator url="../../redirect/redirect/redirect?title=redirect" open-type="redirect" hover-class="other-navigator-hover">菜谱</navigator>
-  <navigator url="/page/index/index" open-type="switchTab" hover-class="other-navigator-hover">备忘录</navigator>
+  <navigator url="/pages/movielist/movielist?type=coming_soon">
+    <image style="width: 50%;" mode="widthFix" src="/images/menu/nav6.png"></image>
+    午餐
+  </navigator>
+  <navigator url="/pages/movielist/movielist?type=top250">
+   <image style="width: 50%;" mode="widthFix" src="/images/menu/nav7.png"></image>
+    晚餐
+  </navigator>
 </view>

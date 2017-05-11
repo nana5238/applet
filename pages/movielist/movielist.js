@@ -1,10 +1,10 @@
-//index.js
+//movielist.js
 //获取应用实例
 var app = getApp();
-var page = 0;
+var page;
 var total;
-var getList = function(that,type,page){
-
+var list;
+var getList = function(that,type,page,tag){
     if(20 * page > total){
       that.setData({
         nomore:false,
@@ -20,17 +20,16 @@ var getList = function(that,type,page){
     wx.request({
       url: 'https://api.douban.com/v2/movie/'+type,
       method:'POST',
+      dataType:"json",
       header: {
           'content-type': 'application/json',
-          "Content-Type":"json"
       },
       data:{
         start:20*page,
+        q:tag,
       },
       success: function(res) {
-        var list = [];
         total = res.data.total;
-        console.log(list);
         for(var i = 0; i < res.data.subjects.length; i++){
             list.push(res.data.subjects[i]);
         }
@@ -38,40 +37,42 @@ var getList = function(that,type,page){
           movielist:list,
           hidden:true,
           nomore:true,
-        })
+          title:res.data.title,
+        });
+        wx.setNavigationBarTitle({
+          title: that.data.title
+        });
         page++;
       }
     })
 }
 
-
 Page({
   data: {
-    imgUrls:[
-      '/images/guidepage/guidepage1.jpg',
-      '/images/guidepage/guidepage2.jpg',
-    ],
     movielist:[],
     title:'',
+    type:'',
+    tag:'',
     hidden:true,
     nomore:true,
   },
   onPullDownRefresh: function(){
     wx.stopPullDownRefresh();
   },
-
-
-  onShow:function(){
-    //   在页面展示之后先获取一次数据
-    var that = this;
-    getList(that,"in_theaters",page);
-  },
-  bindDownLoad:function(){
+  bindDownLoad:function(e){
       var that = this;
       page++;
-      getList(that,"in_theaters",page);
+      getList(that,this.data.type,page,this.data.tag);
   },
-
-  onLoad: function (options) {
+  onLoad: function (e) {
+      list = [];
+      page = 0;
+      var that = this;
+      that.setData({
+          type:e.type,
+          tag:e.tag,
+      });
+      getList(that,this.data.type,page,this.data.tag);
   }
+
 })

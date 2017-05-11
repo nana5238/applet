@@ -1,8 +1,8 @@
 <!--movielist.wxml-->
-<scroll-view bindscrolltolower="bindDownLoad" lower-threshold="100" style="height: 100%" scroll-y="true">
-
+<view></view>
+<scroll-view bindscrolltolower="bindDownLoad" style="height: 100%" scroll-y="true">
   <view class="flex-wrp">
-    <view class="flex-item" wx:for="{{movielist}}">
+    <navigator class="flex-item" wx:for="{{movielist}}" url="../moviedetail/moviedetail?id={{item.id}}">
         <image  mode="widthFix" src="{{item.images.large}}"></image>
         <view class="message">
           <view class="title">{{item.title}}</view>
@@ -13,13 +13,15 @@
           <view class="msg">主演：<text wx:for="{{item.casts}}" wx:for-item="itemName" wx:for-index="idx">{{itemName.name}}<text wx:if ="{{idx < item.casts.length-1}}"> 、</text></text> </view>
         </view>
         <view class="star">{{item.rating.average}}</view>
-    </view>
+    </navigator>
     <view class="body-view">
         <loading hidden="{{hidden}}">
             加载中...
         </loading>
     </view>
-    <text hidden="{{nomore}}" class="no_more">没有更多了</text>
+    <viem  class="no_more">
+      <text hidden="{{nomore}}">没有更多了</text>
+    </viem>
 
   </view>
 </scroll-view>

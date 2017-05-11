@@ -54,11 +54,11 @@ scroll-view{
     right:15px;
     top:15px;
 }
+
 .no_more{
   text-align:center;
   width:100%;
-  display:block;
   line-height:30px;
-font-size:14px;
-
+  font-size:14px;
+  display:block
 }

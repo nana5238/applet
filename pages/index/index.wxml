@@ -1,12 +1,14 @@
 <!--index.wxml-->
 <view class="section">
-  <input placeholder="查看你想看的电影" type="text" confirm-type="搜索"/>
+  <input placeholder="查看你想看的电影" type="text" confirm-type="搜索"  bindconfirm="search" value="{{inputValue}}"/>
 </view>
 
 <swiper autoplay="true" indicator-dots="true" indicator-color="rgba(255,255,255,1)" indicator-active-color="rgba(137,214,99,1)" circular="true">
   <block wx:for="{{imgUrls}}">
     <swiper-item>
-        <image src="{{item}}" class="slide-image" />
+      <navigator class="flex-item"  url="../moviedetail/moviedetail?id={{item.id}}">
+        <image src="{{item.images.large}}" class="slide-image" />
+      </navigator>
     </swiper-item>
   </block>
 </swiper>
