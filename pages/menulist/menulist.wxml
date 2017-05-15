@@ -1,0 +1,35 @@
+<!--movielist.wxml-->
+<view></view>
+<scroll-view bindscrolltolower="bindDownLoad" style="height: 100%" scroll-y="true">
+  <view class="flex-wrp">
+    <navigator class="flex-item" wx:for="{{movielist}}" url="../menudetail/menudetail?id={{item.id}}">
+        <image  mode="widthFix" src="{{item.pic}}"></image>
+        <view class="message">
+          <view class="title">{{item.name}}</view>
+          <view class="msg">用餐人数：{{item.peoplenum}}</view>
+          <view class="msg">烹饪时间：{{item.cookingtime}}</view>
+          <view class="msg">标签：{{item.tag}}</view>
+        </view>
+    </navigator>
+    <view class="body-view">
+        <loading hidden="{{hidden}}">
+            加载中...
+        </loading>
+    </view>
+    <viem  class="no_more">
+      <text hidden="{{nomore}}">没有更多了</text>
+    </viem>
+
+  </view>
+</scroll-view>
+
+
+
+
+
+
+
+
+
+
+

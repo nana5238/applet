@@ -1,11 +1,13 @@
 {
   "pages":[
     "pages/guidepage/guidepage",
+    "pages/book/book",
     "pages/index/index",
     "pages/menu/menu",
+    "pages/menulist/menulist",
+    "pages/menudetail/menudetail",
     "pages/moviedetail/moviedetail",
     "pages/movielist/movielist",
-    "pages/book/book",
     "pages/logs/logs"
   ],
   "window":{

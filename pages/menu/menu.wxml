@@ -1,27 +1,24 @@
 <!--menu.wxml-->
 <view class="section">
-  <input placeholder="搜索菜谱" type="text" confirm-type="搜索"/>
+  <input placeholder="搜索菜谱" type="text" confirm-type="搜索"  bindconfirm="search" value="{{inputValue}}"/>
 </view>
 
-<swiper autoplay="true" duration="{{duration}}" indicator-dots="true" indicator-color="rgba(255,255,255,1)" indicator-active-color="rgba(137,214,99,1)" circular="true">
+<swiper autoplay="true" indicator-dots="true" indicator-color="rgba(255,255,255,1)" indicator-active-color="rgba(137,214,99,1)" circular="true">
   <block wx:for="{{imgUrls}}">
     <swiper-item>
-        <image src="{{item}}" class="slide-image" />
+      <navigator class="flex-item"  url="../menudetail/menudetail?id={{item.id}}">
+        <image src="{{item.pic}}" class="slide-image" />
+      </navigator>
     </swiper-item>
   </block>
 </swiper>
 
 <view class="btn-area">
-  <navigator url="/pages/movielist/movielist?type=in_theaters">
-    <image style="width:50%; " mode="widthFix" src="/images/menu/nav5.png"></image>
-    早餐
-  </navigator>
-  <navigator url="/pages/movielist/movielist?type=coming_soon">
-    <image style="width: 50%;" mode="widthFix" src="/images/menu/nav6.png"></image>
-    午餐
-  </navigator>
-  <navigator url="/pages/movielist/movielist?type=top250">
-   <image style="width: 50%;" mode="widthFix" src="/images/menu/nav7.png"></image>
-    晚餐
-  </navigator>
+    <navigator url="../menulist/menulist?type=byclass&id={{item.classid}}&name={{item.name}}"   wx:for="{{menuTag}}">
+      <image style="width:50%; " mode="widthFix" src="/images/menu/nav5.png"></image>
+      {{item.name}}
+    </navigator>
 </view>
+
+
+

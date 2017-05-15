@@ -1,21 +1,4 @@
-/**index.wxss**/
-.slide-image{
-  width:100%;
-}
-.section{
-  padding:0 10px;
-  margin:10px 0;
-}
-input{
-  height:30px;
-  line-height:30px;
-  font-size:14px;
-  border:1px solid #ccc;
-  border-radius:15px;
-}
-
-
-
+/**book.wxss**/
 .userinfo {
   display: flex;
   flex-direction: column;
@@ -33,6 +16,31 @@ input{
   color: #aaa;
 }
 
-.usermotto {
-  margin-top: 200px;
+.group{
+  display:flex;
+  padding-bottom:20px;
+  border-bottom:1px solid #ccc;
+  margin-top:60px;
+
+}
+.group  icon{
+  margin:0 10px;
+}
+.group  input{
+  display:inline-block;
+  height:30px;
+  line-height:59px;
+  width:100%;
+  font-size:24px;
+}
+checkbox-group label{
+    display:block;
+    border-bottom:1px solid #ccc;
+    height:50px;
+    line-height:50px;
+    padding:0 15px;
+
+}
+button{
+
 }

@@ -13,19 +13,19 @@ Page({
   onLoad: function (e) {
     var that = this;
     wx.request({
-      url: 'https://api.douban.com/v2/movie/subject/'+e.id,
+      url: 'https://api.jisuapi.com/recipe/detail?appkey=245b31714072866d&id='+e.id,
       method:'POST',
-
       header: {
           'content-type': 'application/jsonp',
       },
       success: function(res) {
         wx.setNavigationBarTitle({
-          title: res.data.title
+          title: res.data.result.name
         });
         that.setData({
-          obj:res.data,
+          obj:res.data.result,
         });
+
       }
     });
   }

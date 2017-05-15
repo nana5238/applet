@@ -1,0 +1,25 @@
+<!--moviedetail.wxml-->
+<view class="section">
+  <image class="banner" mode="widthFix" src="{{obj.pic}}"></image>
+  <view class="title">{{obj.name}}</view>
+
+  <view class="msg">用餐人数：{{obj.peoplenum}}</view>
+  <view class="msg">烹饪时间：{{obj.preparetime}}</view>
+  <view class="msg">标签：{{obj.tag}}</view>
+  <view class="msg">说明：{{obj.content}}</view>
+  <view class="msg">材料：<text wx:for="{{obj.material}}" wx:for-index="idx" wx:for-item="itemName">{{itemName.mname}}{{itemName.amount}}<text wx:if ="{{idx < obj.material.length-1}}"> 、</text></text>
+          </view>
+  <view class="areas">
+    <text> 步骤：</text>
+      <view wx:for="{{obj.process}}" wx:for-item="itemName" wx:for-index="idx">
+        <text>{{idx+1}}:{{itemName.pcontent}}</text>
+        <image src="{{itemName.pic}}" mode="widthFix"/>
+      </view>
+  </view>
+</view>
+
+
+
+
+
+

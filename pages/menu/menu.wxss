@@ -18,7 +18,7 @@ input{
   padding-left:10px;
 
 }
-navigator {
+.btn-area navigator {
   display:inline-block;
   width:33.3%;
   text-align:center;
@@ -30,3 +30,12 @@ navigator {
   display:block;
   margin:30px auto 10px;
 }
+
+
+
+
+
+
+
+
+

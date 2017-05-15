@@ -1,20 +1,25 @@
-<!--index.wxml-->
-<view class="section">
-  <input placeholder="查看你想看的电影" type="text" confirm-type="搜索"/>
+<!--book.wxml-->
+<view class="container">
+  <view  bindtap="bindViewTap" class="userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </view>
+
+<view class="group">
+  <block>
+    <icon wx:if="{{selectedAllStatus}}" type="success" size="30" color="#387ef5" bindtap="bindSelectAll" disabled/>
+    <icon wx:else type="success" size="30" color="#4d4d4d" bindtap="bindSelectAll" disabled/>
+    <input placeholder="What needs to be done?" auto-focus bindconfirm="bindSubmitText" value="{{text}}"/>
+  </block>
 </view>
 
-<swiper autoplay="true" duration="{{duration}}" indicator-dots="true" indicator-color="rgba(255,255,255,1)" indicator-active-color="rgba(137,214,99,1)" circular="true">
-  <block wx:for="{{imgUrls}}">
-    <swiper-item>
-        <image src="{{item}}" class="slide-image" />
-    </swiper-item>
-  </block>
-</swiper>
+<checkbox-group bindchange="checkboxChange">
+  <label class="checkbox" wx:for="{{list}}">
+    <checkbox value="{{index}}" checked="{{item.selected}}"/>{{item.title}}
+  </label>
 
-<view class="btn-area">
-  <navigator url="/page/navigate/navigate?title=navigate" hover-class="navigator-hover">
-    电影
-  </navigator>
-  <navigator url="../../redirect/redirect/redirect?title=redirect" open-type="redirect" hover-class="other-navigator-hover">菜谱</navigator>
-  <navigator url="/page/index/index" open-type="switchTab" hover-class="other-navigator-hover">备忘录</navigator>
+
+</checkbox-group>
+<button bindtap="bindClearTap" wx:if="{{clearshow}}">clear</button>
+
 </view>

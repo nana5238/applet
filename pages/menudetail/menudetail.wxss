@@ -1,0 +1,38 @@
+/**moviedetail.wxss**/
+.section{
+  padding:10px 10px;
+}
+.banner{
+  width:50%;
+  margin:0 auto;
+  display:block;
+}
+.title{
+  text-align:center;
+  color:#387ef5;
+  font-size:18px;
+  margin:5px;
+}
+.msg{
+  font-size:14px;
+  margin-bottom:10px;
+  line-height:20px;
+}
+
+.areas text{
+    display:block;
+    font-size:14px;
+    margin-bottom:10px;
+    line-height:20px;
+}
+.areas navigator{
+  display:inline-block;
+  width:20%;
+  padding-right:10px;
+}
+.areas navigator image{
+  width:100%;
+}
+.areas navigator text{
+  font-size:12px;
+}
