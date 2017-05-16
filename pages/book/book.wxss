@@ -36,9 +36,9 @@
 checkbox-group label{
     display:block;
     border-bottom:1px solid #ccc;
-    height:50px;
-    line-height:50px;
-    padding:0 15px;
+    line-height:20px;
+    padding:10px 15px;
+    font-size:14px;
 
 }
 button{
