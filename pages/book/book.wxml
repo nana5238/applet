@@ -9,7 +9,7 @@
   <block>
     <icon wx:if="{{selectedAllStatus}}" type="success" size="30" color="#387ef5" bindtap="bindSelectAll" disabled/>
     <icon wx:else type="success" size="30" color="#4d4d4d" bindtap="bindSelectAll" disabled/>
-    <input placeholder="What needs to be done?" auto-focus bindconfirm="bindSubmitText" value="{{text}}"/>
+    <input placeholder="{{placeholderText}}" focus bindconfirm="bindSubmitText" value="{{text}}"/>
   </block>
 </view>
 
@@ -17,9 +17,8 @@
   <label class="checkbox" wx:for="{{list}}">
     <checkbox value="{{index}}" checked="{{item.selected}}"/>{{item.title}}
   </label>
-
-
 </checkbox-group>
+
 <button bindtap="bindClearTap" wx:if="{{clearshow}}">clear</button>
 
 </view>

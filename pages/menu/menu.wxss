@@ -31,6 +31,16 @@ input{
   margin:30px auto 10px;
 }
 
+swiper {
+    height:260px;
+    background:rgba(0,0,0,0.2);
+}
+
+swiper-item image{
+    height:260px;
+}
+
+
 
 
 

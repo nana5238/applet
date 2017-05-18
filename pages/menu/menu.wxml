@@ -7,7 +7,7 @@
   <block wx:for="{{imgUrls}}">
     <swiper-item>
       <navigator class="flex-item"  url="../menudetail/menudetail?id={{item.id}}">
-        <image src="{{item.pic}}" class="slide-image" />
+        <image src="{{item.pic}}" class="slide-image" mode="aspectFit"/>
       </navigator>
     </swiper-item>
   </block>

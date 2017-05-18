@@ -4,6 +4,18 @@ var app = getApp();
 
 var listdata ;
 
+function contains(arr, obj) {
+    var i = arr.length;
+    while (i--) {
+        if (arr[i] === obj) {
+            return true;
+        }
+    }
+    return false;
+};
+
+
+
 wx.getStorage({
     key: 'list',
     success: function(res) {
@@ -19,6 +31,7 @@ Page({
     clearshow:false,
     text:"",
     flag:true,
+    placeholderText:"What needs to be done?",
   },
 
   onLoad: function () {
@@ -39,13 +52,19 @@ Page({
   //选中
   checkboxChange:function(e){
        var str = e.detail.value.join(",");
+       var arrNum = [];
+       for(var j = 0;j < e.detail.value.length; j++){
+           arrNum.push(Number(e.detail.value[j]));
+       }
+
        for(var i = 0 ;i < this.data.list.length;i++){
-           if(str.indexOf(i) >= 0){
+           if(contains(arrNum, i)){
                this.data.list[i].selected = true;
            }else{
                this.data.list[i].selected = false;
            }
        }
+
        if(e.detail.value.length == 0){
            this.setData({
                clearshow: false,
@@ -95,6 +114,7 @@ Page({
           wx.setStorage({key:"list", data:this.data.list});
       }
   },
+
   bindSubmitText:function(e){
       if(this.data.list == undefined){
           var that = this;
@@ -103,15 +123,15 @@ Page({
               data:[{"title":e.detail.value,"selected":false}],
           });
           this.setData({
-              list: [{"title":e.detail.value,"selected":false}],
               text:"",
+              list: [{"title":e.detail.value,"selected":false}],
           });
 
       }else{
           this.data.list.push({title:e.detail.value,selected:false});
           this.setData({
-              list: this.data.list,
               text:"",
+              list: this.data.list,
           });
       }
       wx.setStorage({key:"list", data:this.data.list});
